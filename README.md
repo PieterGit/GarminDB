@@ -29,7 +29,7 @@ Once you have your data in the DB, I recommend using a supplied Jupyter notebook
 ## Releases
 
 GarminDb releases are hosted on [PyPI](https://pypi.org/project/garmindb/). GarminDb requires [Python](https://www.python.org/) 3.x. With Python installed, install the latest release with [pip](https://pypi.org/project/pip/) by running `pip install garmindb` in a terminal.
-* Copy `GarminConnectConfig.json.example` to `~/.GarminDb/GarminConnectConfig.json`, edit it, and add your Garmin Connect username and password and adjust the start dates to match the dats of your data in Garmin Connect.
+* Copy `GarminConnectConfig.json.example` to `~/.GarminDb/GarminConnectConfig.json`, edit it, and add your Garmin Connect username and password and adjust the start dates to match the dats of your data in Garmin Connect. By default it will download the data starting from 2023.
 * Starting out: download all of your data and create your db by running `garmindb_cli.py --all --download --import --analyze` in a terminal.
 * Incrementally update your db by downloading the latest data and importing it by running `garmindb_cli.py --all --download --import --analyze --latest` in a terminal.
 * Ocassionally run `garmin_cli.py --backup` to backup your DB files.
@@ -43,7 +43,7 @@ The scripts are automated with [Make](https://www.gnu.org/software/make/manual/m
 * Git clone GarminDB repo using the [SSH clone method](https://github.com/git-guides/git-clone#git-clone-with-ssh). The submodules require you to use SSH and not HTTPS. Get the command from the green button on the project home page.
 * Run `make setup` in the cloned tree to get the scripts ready to process data.
 * Copy `GarminConnectConfig.json.example` to `~/.GarminDb/GarminConnectConfig.json`, edit it, and add your Garmin Connect username and password and adjust the start dates to match the dats of your data in Garmin Connect.
-* Run `make create_dbs` once to fetch and process for you data.
+* Run `make create_dbs` once to fetch and process your data.
 * Keep all of your local data up to date by periodically running only one command: `make`.
 
 There is more help on [using the program](https://github.com/tcgoetz/GarminDB/wiki/Usage) in the wiki.
